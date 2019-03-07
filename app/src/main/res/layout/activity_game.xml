@@ -15,7 +15,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="TextView"
+        android:text="@string/title"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/h1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imvQuestion"
         android:layout_width="@dimen/my_image"
         android:layout_height="@dimen/my_image"
         android:layout_marginStart="8dp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imbVolume"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,71 +39,77 @@
         app:srcCompat="@drawable/bird" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="@dimen/my_volumn"
-        android:layout_height="@dimen/my_volumn"
+        android:id="@+id/imbVolume"
+        android:layout_width="@dimen/my_volume"
+        android:layout_height="@dimen/my_volume"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@null"
+        android:onClick="playSound"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imvQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imvQuestion"
+        app:layout_constraintTop_toTopOf="@+id/imvQuestion"
         app:srcCompat="@drawable/volume" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btm1"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
+        android:onClick="choiceAns"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/btm2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imvQuestion" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btm2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:onClick="choiceAns"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintBottom_toBottomOf="@+id/btm1"
+        app:layout_constraintEnd_toStartOf="@+id/btm3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/btm1" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btm3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:onClick="choiceAns"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintBottom_toBottomOf="@+id/btm2"
+        app:layout_constraintEnd_toStartOf="@+id/btm4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/btm2" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btm4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="choiceAns"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button6"
+        app:layout_constraintBottom_toBottomOf="@+id/btm3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button6" />
+        app:layout_constraintStart_toEndOf="@+id/btm3" />
 
 </android.support.constraint.ConstraintLayout>

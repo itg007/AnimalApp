@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Animal App</string>
+    <string name="title">ภาพต่อไปนี้เป็นเงาของสัตว์ชนิดใด</string>
 </resources>
