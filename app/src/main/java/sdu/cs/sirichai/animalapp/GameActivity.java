@@ -1,6 +1,9 @@
 package sdu.cs.sirichai.animalapp;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -232,9 +235,33 @@ public class GameActivity extends AppCompatActivity {
         }
 
         if (qid.isEmpty()) { //ถ้าทำครบทุกข้อ
-            Toast.makeText(getApplicationContext(), "คุณได้ " + score + " คะแนน", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "คุณได้ " + score + " คะแนน", Toast.LENGTH_SHORT).show();
+            dialogboxScore();
         } else {//ถ้ายังไม่ครบทำต่อ
             setQuestion(qid.remove(0));
         }
     }//end choiceAns
+
+    private void dialogboxScore() { //แสดงคะแนนในรูป DialogBox
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("สรุปคะแนน");
+        builder.setMessage("คุณได้ " + score + " คะแนน")
+            .setCancelable(false)
+            .setPositiveButton("เล่นอีกครั้ง", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
+                }
+            })
+            .setNegativeButton("ออกไป!!!", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }//end dialogboxScore
 }//end Class
